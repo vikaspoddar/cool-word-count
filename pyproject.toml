@@ -1,15 +1,43 @@
 [project]
 name = "cool-word-count"
-version = "0.2.5"
-description = "CLI application to count the number of words in a given text file."
+version = "0.3.0"
+description = "A fast Unix-like CLI tool to count lines, words, and bytes in text files."
 readme = "README.md"
+requires-python = ">=3.14"
+
 authors = [
     { name = "vikaspoddar", email = "poddarvikas685@gmail.com" }
 ]
-requires-python = ">=3.14"
+
+license = { text = "MIT" }
+
+keywords = [
+    "cli",
+    "wc",
+    "word-count",
+    "text-processing",
+    "unix-tools"
+]
+
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Environment :: Console",
+    "Topic :: Utilities",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.14",
+    "Operating System :: OS Independent",
+]
+
 dependencies = [
     "click>=8.3.3",
 ]
+
+[project.urls]
+Homepage = "https://github.com/vikaspoddar/cool-word-count"
+Repository = "https://github.com/vikaspoddar/cool-word-count"
+Issues = "https://github.com/vikaspoddar/cool-word-count/issues"
 
 [project.scripts]
 coolwc = "cool_word_count:main"
