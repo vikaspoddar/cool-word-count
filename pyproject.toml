@@ -1,0 +1,29 @@
+[project]
+name = "cool-word-count"
+version = "0.2.0"
+description = "CLI application to count the number of words in a given text file."
+readme = "README.md"
+authors = [
+    { name = "vikaspoddar", email = "poddarvikas685@gmail.com" }
+]
+requires-python = ">=3.14"
+dependencies = [
+    "click>=8.3.3",
+]
+
+[project.scripts]
+coolwc = "cool_word_count:main"
+
+[build-system]
+requires = ["uv_build>=0.11.7,<0.12.0"]
+build-backend = "uv_build"
+
+[[tool.uv.index]]
+name = "pypi"
+url = "https://pypi.org/simple/"
+
+[[tool.uv.index]]
+name = "test-pypi"
+url = "https://test.pypi.org/simple/"
+publish-url = "https://test.pypi.org/legacy/"
+explicit = true

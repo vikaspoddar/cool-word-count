@@ -1,0 +1,26 @@
+name: publish
+
+on:
+  push:
+    tags:
+      - "[0-9]+.[0-9]+.[0-9]+"
+
+jobs:
+  release:
+    name: release
+    runs-on: ubuntu-latest
+    environment: test
+    permissions:
+      id-token: write
+      contents: read
+    steps:
+      - name: checkout
+        uses: actions/checkout@v6
+      - name: install uv
+        uses: astral-sh/setup-uv@v7.1.6
+      - name: install python
+        run: uv python install 3.14.2
+      - name: build
+        run: uv build
+      - name: publish
+        run: uv publish --index test-pypi
