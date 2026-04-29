@@ -4,17 +4,20 @@ import click
 
 ALIGNMENT = 8
 
+
 def wc(filepath: Path, show_bytes: bool, show_words: bool, show_lines: bool) -> None:
     content = filepath.read_bytes()
     byte_count = len(content)
     word_count = len(content.split())
     line_count = len(content.splitlines())
     output = (
-            (f"{line_count:>{ALIGNMENT}}" if show_lines else "")
-             + (f"{word_count:>{ALIGNMENT}}" if show_words else "")
-             + (f"{byte_count:>{ALIGNMENT}}" if show_bytes else "")
-             + f"{filepath}" )
+        (f"{line_count:>{ALIGNMENT}}" if show_lines else "")
+        + (f"{word_count:>{ALIGNMENT}}" if show_words else "")
+        + (f"{byte_count:>{ALIGNMENT}}" if show_bytes else "")
+        + f"{filepath}"
+    )
     print(output)
+
 
 @click.command()
 @click.argument("filepath", type=Path)
