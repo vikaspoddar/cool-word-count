@@ -36,7 +36,7 @@ jobs:
             dist/*.whl
 
       - name: publish
-        run: uv publish --index test-pypi
+        run: uv publish --index pypi
 
       - name: github release
         run: gh release create ${{ github.ref_name }} dist/* --title "${{ github.ref_name }}" --generate-notes
