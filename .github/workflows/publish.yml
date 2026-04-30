@@ -27,6 +27,13 @@ jobs:
 
       - name: build
         run: uv build
+      
+      - name: gh-action-sigstore-python
+        uses: sigstore/gh-action-sigstore-python@v3.3.0
+        with:
+          inputs: >-
+            dist/*.tar.gz
+            dist/*.whl
 
       - name: publish
         run: uv publish --index test-pypi
