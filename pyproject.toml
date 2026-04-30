@@ -3,7 +3,7 @@ name = "cool-word-count"
 version = "1.0.0"
 description = "A fast Unix-like CLI tool to count lines, words, and bytes in text files."
 readme = "README.md"
-requires-python = ">=3.14"
+requires-python = ">=3.9"
 
 authors = [
     { name = "vikaspoddar", email = "poddarvikas685@gmail.com" }
@@ -31,7 +31,7 @@ classifiers = [
 ]
 
 dependencies = [
-    "click>=8.3.3",
+    "click>=8.1.7,<9",
 ]
 
 [project.urls]
@@ -45,10 +45,6 @@ coolwc = "cool_word_count:main"
 [build-system]
 requires = ["uv_build>=0.11.7,<0.12.0"]
 build-backend = "uv_build"
-
-[[tool.uv.index]]
-name = "pypi"
-url = "https://pypi.org/simple/"
 
 [[tool.uv.index]]
 name = "test-pypi"

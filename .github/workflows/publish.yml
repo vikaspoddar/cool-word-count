@@ -9,7 +9,7 @@ jobs:
   release:
     name: release
     runs-on: ubuntu-latest
-    environment: test
+    environment: release
 
     permissions:
       id-token: write
@@ -36,7 +36,7 @@ jobs:
             dist/*.whl
 
       - name: publish
-        run: uv publish --index pypi
+        run: uv publish
 
       - name: github release
         run: gh release create ${{ github.ref_name }} dist/* --title "${{ github.ref_name }}" --generate-notes
