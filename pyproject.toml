@@ -1,6 +1,6 @@
 [project]
 name = "cool-word-count"
-version = "1.0.0"
+version = "1.0.1"
 description = "A fast Unix-like CLI tool to count lines, words, and bytes in text files."
 readme = "README.md"
 requires-python = ">=3.9"
